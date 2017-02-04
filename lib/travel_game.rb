@@ -14,6 +14,12 @@ class TravelGame
 
     @steps.each do |step|
       sum = sum + step
+
+      if sum === 4
+        sum = sum - 2
+      elsif sum === 9
+        sum = sum - 4
+      end
     end
 
     sum # returns sum
