@@ -14,18 +14,27 @@ class TravelGame
 
     @steps.each do |step|
       sum = sum + step
-
-      if sum === 4
-        sum = 10
-      elsif sum === 5
-        sum = sum - 2
       end
-    end
 
-    sum # returns sum
+    case sum
+      when 5,12,24,28
+        sum-=2
+      when 4
+        sum+=6
+      when 7,14
+        sum+=3
+      when 9,17,21,27
+        sum+=2 
+      
+      
+    end
+    sum
+   # sum # returns sum
   end
+
 end
 
 game = TravelGame.new
 game.make_steps(1, 2, 4)
 puts game.result
+
